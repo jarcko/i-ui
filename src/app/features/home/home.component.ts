@@ -36,7 +36,6 @@ export class HomeComponent implements OnInit {
         .subscribe(items => {
           this.feedItems = [...this.feedItems, ...items];
           this.isAllContentLoaded = !items.length;
-          console.log('items', this.feedItems);
           this.cdr.detectChanges();
         });
     }

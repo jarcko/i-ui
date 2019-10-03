@@ -12,7 +12,7 @@ export class LoadOnScrollDirective {
   @HostListener('window:scroll', [])
   onScroll(): void {
     const docEl = this.document.documentElement;
-    if (docEl.scrollTop + docEl.clientHeight >= docEl.scrollHeight) {
+    if (docEl.scrollTop + docEl.clientHeight >= docEl.scrollHeight - 1) {
       this.loadMore.emit();
     }
   }
