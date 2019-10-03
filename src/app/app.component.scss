@@ -1,0 +1,25 @@
+@import "~src/variables.scss";
+
+.header {
+  font-family: "josefin sans", sans-serif;
+  font-size: 18px;
+  letter-spacing: .31em;
+  text-transform: uppercase;
+  padding: 20px;
+  text-align: center;
+  color: $gray8;
+  background-color: $blueviolet;
+  border-bottom: 1px solid $gray6;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.content {
+  width: 100%;
+  margin: 5em auto;
+
+  @media (min-width: 960px) {
+    width: 960px;
+  }
+}

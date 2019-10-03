@@ -6,6 +6,8 @@
   "rules": {
     "array-type": false,
     "arrow-parens": false,
+    "no-string-literal": false,
+    "callable-types": true,
     "deprecation": {
       "severity": "warn"
     },

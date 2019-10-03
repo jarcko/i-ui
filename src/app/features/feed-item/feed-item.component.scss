@@ -1,0 +1,44 @@
+@import "~src/variables";
+
+:host {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid $gray7;
+  margin-top: 10px;
+
+  @media (min-width: 640px) {
+    margin-top: 20px;
+  }
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  border-bottom: 1px solid $gray7;
+  font-size: 18px;
+  background-color: $white;
+
+  &.error {
+    border-color: $error;
+  }
+}
+
+.content {
+  align-self: center;
+  width: 100%;
+
+  .data-error {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+
+    .icon {
+      color: $error;
+      margin-right: 5px;
+    }
+  }
+
+}

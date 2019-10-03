@@ -1,0 +1,24 @@
+@import "~src/variables";
+
+:host {
+  display: block;
+  margin: 10px 5px;
+  border: 1px solid $error;
+  border-radius: 3px;
+}
+
+.header {
+  display: flex;
+  color: $gray8;
+  background-color: $error;
+  padding: 5px;
+
+  .title {
+    padding-left: 5px;
+    font-size: 18px;
+  }
+}
+
+.message {
+  padding: 14px 10px;
+}

@@ -1,0 +1,28 @@
+<div class="header">
+  <div class="title">{{ item.title }}</div>
+  <div class="view-count">{{ (item.views | formatNumber) + ' ' }}views</div>
+</div>
+
+<div class="content" [ngSwitch]="item.source">
+
+  <video-in-iframe *ngSwitchCase="defineSource(item.source)"
+    [videoId]="item.videoId"
+    [provider]="item.source"
+    (dataError)="onDataError()">
+  </video-in-iframe>
+
+  <playbuzz-video *ngSwitchCase="'playbuzz'"
+    [videoId]="item.videoId"
+    (dataError)="onDataError()">
+  </playbuzz-video>
+
+  <generic-video *ngSwitchDefault
+    [srcUrl]="item.url"
+    (dataError)="onDataError()">
+  </generic-video>
+
+  <div class="data-error" *ngIf="dataError">
+    <mat-icon class="mat-18 icon">warning</mat-icon>
+    Can't load the video due to missed data!
+  </div>
+</div>
