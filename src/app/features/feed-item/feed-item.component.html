@@ -3,7 +3,7 @@
   <div class="view-count">{{ (item.views | formatNumber) + ' ' }}views</div>
 </div>
 
-<div class="content" [ngSwitch]="item.source">
+<div class="content" [ngSwitch]="item.source" [ngStyle]="{ 'min-height': !dataError ? videoItemMinHeight +'px' : '' }">
 
   <video-in-iframe *ngSwitchCase="defineSource(item.source)"
     [videoId]="item.videoId"

@@ -1,3 +1,7 @@
 @import "~src/variables";
 
+:host {
+  min-height: inherit;
+}
+
 @include videoMixin;

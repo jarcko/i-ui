@@ -1,11 +1,11 @@
-import {ChangeDetectorRef, Component, OnDestroy, OnInit} from '@angular/core';
-import {Observable, Subject} from 'rxjs';
+import { ChangeDetectorRef, Component, OnDestroy, OnInit } from '@angular/core';
+import { Observable, Subject } from 'rxjs';
 import { FeedItem } from 'src/app/core/interfaces';
 import { ActivatedRoute } from '@angular/router';
 import { map } from 'rxjs/operators';
 import { FeedService } from 'src/app/core/feed.service';
 import { DeviceService } from 'src/app/core/device.service';
-import {takeUntil} from 'rxjs/internal/operators';
+import { takeUntil } from 'rxjs/internal/operators';
 
 @Component({
   selector: 'app-home',
@@ -17,6 +17,7 @@ export class HomeComponent implements OnInit, OnDestroy {
   isAllContentLoaded: boolean;
   error$: Observable<Error>;
   unsubscribe$ = new Subject<void>();
+  videoItemMinHeight: number;
 
   constructor(
     private route: ActivatedRoute,
@@ -28,10 +29,13 @@ export class HomeComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.route.data.pipe(
       takeUntil(this.unsubscribe$),
-      map(({ resolved }) => resolved)
+      map(({ resolved }) => resolved),
     )
       .subscribe(items => this.feedItems = items);
     this.error$ = this.feedService.error$;
+    this.videoItemMinHeight = this.deviceService.isMobile()
+      ? this.deviceService.mobileMinHeight
+      : this.deviceService.desktopMinHeight;
   }
 
   onLoadMore(): void {

@@ -3,7 +3,7 @@ export interface FeedItem {
   type: string;
   source: string;
   videoId?: string;
-  url: string;
+  url?: string;
   views: number;
 }
 

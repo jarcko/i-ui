@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ErrorNotificationComponent } from './error-notification.component';
+import { MatIconModule } from '@angular/material';
 
 describe('ErrorNotificationComponent', () => {
   let component: ErrorNotificationComponent;
@@ -8,7 +9,8 @@ describe('ErrorNotificationComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ErrorNotificationComponent ]
+      declarations: [ ErrorNotificationComponent ],
+      imports: [ MatIconModule ],
     })
     .compileComponents();
   }));

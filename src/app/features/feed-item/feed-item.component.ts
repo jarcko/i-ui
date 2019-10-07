@@ -9,6 +9,7 @@ import { FeedItem } from 'src/app/core/interfaces';
 })
 export class FeedItemComponent {
   @Input() item: FeedItem;
+  @Input() videoItemMinHeight: number;
 
   constructor(private cdr: ChangeDetectorRef) { }
 

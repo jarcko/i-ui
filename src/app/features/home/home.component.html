@@ -1,5 +1,9 @@
 <error-notification *ngIf="error$ | async" [message]="(error$ | async)?.message"></error-notification>
 
 <div *ngIf="feedItems" loadOnScroll (loadMore)="onLoadMore()">
-  <feed-item *ngFor="let feedItem of feedItems" [item]="feedItem"></feed-item>
+  <feed-item *ngFor="let feedItem of feedItems"
+    class="feed-item"
+    [item]="feedItem"
+    [videoItemMinHeight]="videoItemMinHeight">
+  </feed-item>
 </div>

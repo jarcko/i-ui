@@ -1,15 +1,13 @@
 @import "~src/variables.scss";
 
 .header {
-  font-family: "josefin sans", sans-serif;
-  font-size: 18px;
-  letter-spacing: .31em;
+  font-size: 16px;
   text-transform: uppercase;
-  padding: 20px;
+  padding: 14px;
   text-align: center;
-  color: $gray8;
-  background-color: $blueviolet;
-  border-bottom: 1px solid $gray6;
+  color: $gray4;
+  background-color: $gray10;
+  border-bottom: 1px solid $gray7;
   position: fixed;
   top: 0;
   width: 100%;
@@ -19,7 +17,7 @@
   width: 100%;
   margin: 5em auto;
 
-  @media (min-width: 960px) {
-    width: 960px;
+  @media (min-width: 640px) {
+    width: 640px;
   }
 }
